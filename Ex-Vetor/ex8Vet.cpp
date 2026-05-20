@@ -1,10 +1,10 @@
 #include <iostream>
 using namespace std;
-
+#include <vector>
 int main()
 {
-    int vet1[5],vetPosi[5],vetInter[5],armaz=0,i;
-
+    int armaz=0,i,j=0;
+    vector<int> vet1(5),vetPosi,vetInter;
     for(i=0;i<5;i++){
        vet1[i]=rand()%10;
     }
@@ -13,15 +13,11 @@ int main()
     }
      for(i=0;i<5;i++){
       if(vet1[i]%5==0){
-            int j=0;
-            vetPosi[j]=i;
-            j++;
+            vetPosi.push_back(i);
       }
     }
-
-     for(i=0;i<5;i++){
-        cout<<vetPosi[i]<<"vet \n";
-
+     for(i=0;i<vetPosi.size();i++){
+        cout<<vetPosi[i]<<"Posição \n";
     }
     return 0;
 }
